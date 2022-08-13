@@ -3,15 +3,15 @@ var todaysDate = moment().format('MMMM Do YYYY, h:mm:ss a');
 $("#currentDay").html(todaysDate);
 
 
-
+$(document).ready(function() {
 //save btn event listener
 $('.saveBtn').on('click', function () {
     //get value of descripion(text-area, time slot) in jquery
-    var description = $(this).siblings(".description").val();
+    var textBar = $(this).siblings(".description").val();
     var timeSlot = $(this).parent().attr("id");
     //save to local storage
-    localStorage.setItem(description, timeSlot);
-    console.log(localStorage)
+    localStorage.setItem(textBar, timeSlot);
+    
 })
 
 function trackTime() {
@@ -39,5 +39,21 @@ function trackTime() {
             $(this).addClass("future");
         }
     })
+
 }
+
+$("#hour7 .description").val(localStorage.getItem("hour7"));
+$("#hour8 .description").val(localStorage.getItem("hour8"));
+$("#hour9 .description").val(localStorage.getItem("hour9"));
+$("#hour10 .description").val(localStorage.getItem("hour10"));
+$("#hour11 .description").val(localStorage.getItem("hour11"));
+$("#hour12 .description").val(localStorage.getItem("hour12"));
+$("#hour13 .description").val(localStorage.getItem("hour13"));
+$("#hour14 .description").val(localStorage.getItem("hour14"));
+$("#hour15 .description").val(localStorage.getItem("hour15"));
+$("#hour16 .description").val(localStorage.getItem("hour16"));
+$("#hour17 .description").val(localStorage.getItem("hour17"));
+
+
 trackTime();
+})
