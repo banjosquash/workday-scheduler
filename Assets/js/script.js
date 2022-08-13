@@ -5,12 +5,12 @@ $("#currentDay").html(todaysDate);
 
 $(document).ready(function() {
 //save btn event listener
-$('.saveBtn').on('click', function () {
+$(".saveBtn").on("click", function () {
     //get value of descripion(text-area, time slot) in jquery
     var textBar = $(this).siblings(".description").val();
     var timeSlot = $(this).parent().attr("id");
     //save to local storage
-    localStorage.setItem(textBar, timeSlot);
+    localStorage.setItem(timeSlot, textBar);
     
 })
 
